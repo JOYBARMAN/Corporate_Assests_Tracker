@@ -19,8 +19,11 @@ from django.urls import path
 
 from django.contrib import admin
 from django.urls import path,include
+from corporate_assests_tracker_api.views import CompanyListCreateAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/employee/',include('account_api.urls')),
+    path('api/assests/',include('corporate_assests_tracker_api.urls'))
+    # path('api/companies/',CompanyListCreateAPIView.as_view())
 ]
