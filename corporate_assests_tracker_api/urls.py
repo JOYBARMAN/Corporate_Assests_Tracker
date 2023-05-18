@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CompanyListCreateAPIView, CompanyRetrieveUpdateDestroyAPIView,EmployeeListCreateAPIView, EmployeeRetrieveUpdateDestroyAPIView, DeviceListCreateAPIView, DeviceRetrieveUpdateDestroyAPIView, DeviceAssignmentListCreateAPIView,DeviceAssignmentRetrieveUpdateDestroyAPIView
+from .views import CompanyListCreateAPIView, CompanyRetrieveUpdateDestroyAPIView,EmployeeListCreateAPIView, EmployeeRetrieveUpdateDestroyAPIView, DeviceListCreateAPIView, DeviceRetrieveUpdateDestroyAPIView, DeviceAssignmentListCreateAPIView,DeviceAssignmentRetrieveUpdateDestroyAPIView,DeviceAssignmentSearch,DeviceAssignmentFilterByCompany
 
 urlpatterns = [
     path('companies/', CompanyListCreateAPIView.as_view(), name='company-list-create'),
@@ -10,4 +10,6 @@ urlpatterns = [
     path('devices/<int:pk>/', DeviceRetrieveUpdateDestroyAPIView.as_view(), name='device-retrieve-update-destroy'),
     path('assignments/', DeviceAssignmentListCreateAPIView.as_view(), name='device-assignment-list-create'),
     path('assignments/<int:pk>/', DeviceAssignmentRetrieveUpdateDestroyAPIView.as_view(), name='device-assignment-retrieve-update-destroy'),
+    path('assignments/search/',DeviceAssignmentSearch.as_view(),name='device-assignment-search'),
+    path('assignments/filter/', DeviceAssignmentFilterByCompany.as_view(), name='device-assignment-filter'),
 ]

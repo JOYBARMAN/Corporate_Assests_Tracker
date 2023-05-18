@@ -5,6 +5,7 @@ from .serializers import CompanyInfoSerializer, EmployeeInfoSerializer,EmployeeI
 from .models import CompanyInfo, EmployeeInfo, Device, AssignmentDevice
 from  account_api.renderers import UserRenderers
 from rest_framework.permissions import IsAuthenticated,IsAdminUser
+from .pagination import MyPagination
 
 class CompanyListCreateAPIView(APIView):
     """
@@ -179,10 +180,13 @@ class DeviceAssignmentListCreateAPIView(APIView):
     """
     renderer_classes = [UserRenderers]
     permission_classes = [IsAuthenticated, IsAdminUser]
+    pagination_class = MyPagination
     def get(self, request):
         assignments = AssignmentDevice.objects.all()
-        serializer = AssignmentDeviceSerializer(assignments, many=True)
-        return Response(serializer.data)
+        paginator = self.pagination_class()
+        result_page = paginator.paginate_queryset(assignments, request)
+        serializer = AssignmentDeviceSerializer(result_page, many=True)
+        return paginator.get_paginated_response(serializer.data)
 
 
     def post(self, request):
@@ -228,6 +232,41 @@ class DeviceAssignmentRetrieveUpdateDestroyAPIView(APIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
         return Response(status=status.HTTP_404_NOT_FOUND)
 
+
+
+class DeviceAssignmentSearch(APIView):
+    """
+       API endpoint for search assignment devices by employee name
+    """
+    renderer_classes = [UserRenderers]
+    permission_classes = [IsAuthenticated, IsAdminUser]
+    pagination_class = MyPagination
+    def get(self, request):
+        search_query = request.query_params.get('employee_name', '')
+        device_assignment = AssignmentDevice.objects.filter(employee__employee__name__icontains=search_query)
+        paginator = self.pagination_class()
+        result_page = paginator.paginate_queryset(device_assignment, request)
+        serializer = AssignmentDeviceSerializer(result_page, many=True)
+        return paginator.get_paginated_response(serializer.data)
+
+class DeviceAssignmentFilterByCompany(APIView):
+    """
+       API endpoint for filter assignment device by company name
+    """
+    renderer_classes = [UserRenderers]
+    permission_classes = [IsAuthenticated, IsAdminUser]
+    pagination_class = MyPagination
+
+    def get(self, request):
+        company = request.GET.get('company')
+        if company is not None:
+            device_assignment = AssignmentDevice.objects.filter(employee__company__name=company)
+            paginator = self.pagination_class()
+            result_page = paginator.paginate_queryset(device_assignment, request)
+            serializer = AssignmentDeviceSerializer(result_page, many=True)
+            return paginator.get_paginated_response(serializer.data)
+        else:
+            return Response({'error': 'Please provide section parameter in the URL'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
