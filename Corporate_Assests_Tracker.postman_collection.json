@@ -1,0 +1,1073 @@
+{
+	"info": {
+		"_postman_id": "2774feea-a79d-40bc-90af-02b4169ccbf2",
+		"name": "Corporate_Assests_Tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25248329"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "employee_register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "joydfgg@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "joy Barman",
+									"type": "text"
+								},
+								{
+									"key": "tc",
+									"value": "True",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/employee/register/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employee",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employee_login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/employee/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employee",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employee_profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MTc2Njk1LCJpYXQiOjE2ODQxNTg2OTUsImp0aSI6Ijg2ZDZiNDQ4ZWExNDQ0YjFhZTdjZjk3NDgxMGUxNzJmIiwidXNlcl9pZCI6Mn0.LM_kzdEcBbuiy4R9pdJtuoNf8Fc8fDWDaLbxXfEvRlA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/employee/profile/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employee",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employee_change_account_password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MTc2Njk1LCJpYXQiOjE2ODQxNTg2OTUsImp0aSI6Ijg2ZDZiNDQ4ZWExNDQ0YjFhZTdjZjk3NDgxMGUxNzJmIiwidXNlcl9pZCI6Mn0.LM_kzdEcBbuiy4R9pdJtuoNf8Fc8fDWDaLbxXfEvRlA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/employee/changepassword/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employee",
+								"changepassword",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "joy@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/employee/password_reset_email/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employee",
+								"password_reset_email",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employee_password_reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/employee/passwordreset/Mg/bo9bxr-7f004629c63c0329d2d513e868a4b126/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employee",
+								"passwordreset",
+								"Mg",
+								"bo9bxr-7f004629c63c0329d2d513e868a4b126",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "corporate_assests_tracker",
+			"item": [
+				{
+					"name": "company list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NDE2MjQxLCJpYXQiOjE2ODQzOTgyNDEsImp0aSI6IjBkYWY0NDE1MWU3YzQ0ZDY5OGZiM2UzNTA3NTM5NTUxIiwidXNlcl9pZCI6MX0.w3HNAJK0bFO9kEF5az1dYaTNBpfD6nNlh0HLbFPeQK0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/companies/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"companies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "company post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjM3ODczLCJpYXQiOjE2ODQyMTk4NzMsImp0aSI6ImI3YjM4MThmZjY4YzQ2NWQ5MzY1NjFhYjgwZGM4YjlmIiwidXNlcl9pZCI6MX0.X69f6HqK4zDhMlEgfqzCyIHirlBmmG6YuigqQAusX_U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "MicroSoft",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Canada",
+									"type": "text"
+								},
+								{
+									"key": "contact_info",
+									"value": "0987654",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/assests/companies/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"companies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "company update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjM3ODczLCJpYXQiOjE2ODQyMTk4NzMsImp0aSI6ImI3YjM4MThmZjY4YzQ2NWQ5MzY1NjFhYjgwZGM4YjlmIiwidXNlcl9pZCI6MX0.X69f6HqK4zDhMlEgfqzCyIHirlBmmG6YuigqQAusX_U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "MicroSoft by Bill Gates",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Canada",
+									"type": "text"
+								},
+								{
+									"key": "contact_info",
+									"value": "0987654",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/assests/companies/3/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"companies",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "company detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjM3ODczLCJpYXQiOjE2ODQyMTk4NzMsImp0aSI6ImI3YjM4MThmZjY4YzQ2NWQ5MzY1NjFhYjgwZGM4YjlmIiwidXNlcl9pZCI6MX0.X69f6HqK4zDhMlEgfqzCyIHirlBmmG6YuigqQAusX_U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/companies/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"companies",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "company delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjM3ODczLCJpYXQiOjE2ODQyMTk4NzMsImp0aSI6ImI3YjM4MThmZjY4YzQ2NWQ5MzY1NjFhYjgwZGM4YjlmIiwidXNlcl9pZCI6MX0.X69f6HqK4zDhMlEgfqzCyIHirlBmmG6YuigqQAusX_U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/companies/2/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"companies",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employee get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjU2MTI2LCJpYXQiOjE2ODQyMzgxMjYsImp0aSI6IjJhMWEzMGI1NWNjOTQ1ODFiNmVhOTMwYWM0YzkzMTUyIiwidXNlcl9pZCI6MX0._vHdoB2t3tby4BuYyoT_ItsS_UwKlgY4XwtcKYdFzL4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/employees/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"employees",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employee detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjU2MTI2LCJpYXQiOjE2ODQyMzgxMjYsImp0aSI6IjJhMWEzMGI1NWNjOTQ1ODFiNmVhOTMwYWM0YzkzMTUyIiwidXNlcl9pZCI6MX0._vHdoB2t3tby4BuYyoT_ItsS_UwKlgY4XwtcKYdFzL4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/employees/4/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"employees",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employee post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjM3ODczLCJpYXQiOjE2ODQyMTk4NzMsImp0aSI6ImI3YjM4MThmZjY4YzQ2NWQ5MzY1NjFhYjgwZGM4YjlmIiwidXNlcl9pZCI6MX0.X69f6HqK4zDhMlEgfqzCyIHirlBmmG6YuigqQAusX_U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job_title",
+									"value": "software",
+									"type": "text"
+								},
+								{
+									"key": "employee",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "company",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/assests/employees/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"employees",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employee update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjU2MTI2LCJpYXQiOjE2ODQyMzgxMjYsImp0aSI6IjJhMWEzMGI1NWNjOTQ1ODFiNmVhOTMwYWM0YzkzMTUyIiwidXNlcl9pZCI6MX0._vHdoB2t3tby4BuYyoT_ItsS_UwKlgY4XwtcKYdFzL4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job_title",
+									"value": "software",
+									"type": "text"
+								},
+								{
+									"key": "employee",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "company",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/assests/employees/4/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"employees",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employee delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjU2MTI2LCJpYXQiOjE2ODQyMzgxMjYsImp0aSI6IjJhMWEzMGI1NWNjOTQ1ODFiNmVhOTMwYWM0YzkzMTUyIiwidXNlcl9pZCI6MX0._vHdoB2t3tby4BuYyoT_ItsS_UwKlgY4XwtcKYdFzL4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/employees/4/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"employees",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "devices get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjU2MTI2LCJpYXQiOjE2ODQyMzgxMjYsImp0aSI6IjJhMWEzMGI1NWNjOTQ1ODFiNmVhOTMwYWM0YzkzMTUyIiwidXNlcl9pZCI6MX0._vHdoB2t3tby4BuYyoT_ItsS_UwKlgY4XwtcKYdFzL4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/devices/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"devices",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "devices detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjU2MTI2LCJpYXQiOjE2ODQyMzgxMjYsImp0aSI6IjJhMWEzMGI1NWNjOTQ1ODFiNmVhOTMwYWM0YzkzMTUyIiwidXNlcl9pZCI6MX0._vHdoB2t3tby4BuYyoT_ItsS_UwKlgY4XwtcKYdFzL4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/devices/2/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"devices",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "devices post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjU2MTI2LCJpYXQiOjE2ODQyMzgxMjYsImp0aSI6IjJhMWEzMGI1NWNjOTQ1ODFiNmVhOTMwYWM0YzkzMTUyIiwidXNlcl9pZCI6MX0._vHdoB2t3tby4BuYyoT_ItsS_UwKlgY4XwtcKYdFzL4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "serial_number",
+									"value": "#@#$567",
+									"type": "text"
+								},
+								{
+									"key": "model",
+									"value": "Mi-20 F6",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This is another best devices",
+									"type": "text"
+								},
+								{
+									"key": "company",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/assests/devices/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"devices",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "devices update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjU2MTI2LCJpYXQiOjE2ODQyMzgxMjYsImp0aSI6IjJhMWEzMGI1NWNjOTQ1ODFiNmVhOTMwYWM0YzkzMTUyIiwidXNlcl9pZCI6MX0._vHdoB2t3tby4BuYyoT_ItsS_UwKlgY4XwtcKYdFzL4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "serial_number",
+									"value": "#@#$567",
+									"type": "text"
+								},
+								{
+									"key": "model",
+									"value": "Mi-20 F6",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This is another best devices from bd",
+									"type": "text"
+								},
+								{
+									"key": "company",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/assests/devices/2/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"devices",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "devices delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjU2MTI2LCJpYXQiOjE2ODQyMzgxMjYsImp0aSI6IjJhMWEzMGI1NWNjOTQ1ODFiNmVhOTMwYWM0YzkzMTUyIiwidXNlcl9pZCI6MX0._vHdoB2t3tby4BuYyoT_ItsS_UwKlgY4XwtcKYdFzL4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/devices/3/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"devices",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assignments device get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NDEzNjAxLCJpYXQiOjE2ODQzOTU2MDEsImp0aSI6IjYzZDYxZDE1YjVjMzQyYTQ5OWFhNTk3ODA4ZTk5NDdmIiwidXNlcl9pZCI6MX0.aWae5UDRHmPeNulk5D9sqzz8wUKSr54Bm7PeAvdbvy0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/assignments/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"assignments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assignments device detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjU2MTI2LCJpYXQiOjE2ODQyMzgxMjYsImp0aSI6IjJhMWEzMGI1NWNjOTQ1ODFiNmVhOTMwYWM0YzkzMTUyIiwidXNlcl9pZCI6MX0._vHdoB2t3tby4BuYyoT_ItsS_UwKlgY4XwtcKYdFzL4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/assignments/2/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"assignments",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assignments device post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjU2MTI2LCJpYXQiOjE2ODQyMzgxMjYsImp0aSI6IjJhMWEzMGI1NWNjOTQ1ODFiNmVhOTMwYWM0YzkzMTUyIiwidXNlcl9pZCI6MX0._vHdoB2t3tby4BuYyoT_ItsS_UwKlgY4XwtcKYdFzL4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "assigned_date",
+									"value": "2023-05-16",
+									"type": "text"
+								},
+								{
+									"key": "assigned_condition",
+									"value": "best",
+									"type": "text"
+								},
+								{
+									"key": "employee",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "device",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/assests/assignments/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"assignments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assignments device update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjU2MTI2LCJpYXQiOjE2ODQyMzgxMjYsImp0aSI6IjJhMWEzMGI1NWNjOTQ1ODFiNmVhOTMwYWM0YzkzMTUyIiwidXNlcl9pZCI6MX0._vHdoB2t3tby4BuYyoT_ItsS_UwKlgY4XwtcKYdFzL4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "assigned_date",
+									"value": "2023-05-16",
+									"type": "text"
+								},
+								{
+									"key": "assigned_condition",
+									"value": "best",
+									"type": "text"
+								},
+								{
+									"key": "employee",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "device",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/assests/assignments/3/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"assignments",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assignment device delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MjU2MTI2LCJpYXQiOjE2ODQyMzgxMjYsImp0aSI6IjJhMWEzMGI1NWNjOTQ1ODFiNmVhOTMwYWM0YzkzMTUyIiwidXNlcl9pZCI6MX0._vHdoB2t3tby4BuYyoT_ItsS_UwKlgY4XwtcKYdFzL4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/assignments/4/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"assignments",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assignment device search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NDEzNjAxLCJpYXQiOjE2ODQzOTU2MDEsImp0aSI6IjYzZDYxZDE1YjVjMzQyYTQ5OWFhNTk3ODA4ZTk5NDdmIiwidXNlcl9pZCI6MX0.aWae5UDRHmPeNulk5D9sqzz8wUKSr54Bm7PeAvdbvy0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/assignments/search/?employee_name=joy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"assignments",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "employee_name",
+									"value": "joy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assignment device filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NDEzNjAxLCJpYXQiOjE2ODQzOTU2MDEsImp0aSI6IjYzZDYxZDE1YjVjMzQyYTQ5OWFhNTk3ODA4ZTk5NDdmIiwidXNlcl9pZCI6MX0.aWae5UDRHmPeNulk5D9sqzz8wUKSr54Bm7PeAvdbvy0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/assests/assignments/filter/?company=MicroSoft by Bill Gates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assests",
+								"assignments",
+								"filter",
+								""
+							],
+							"query": [
+								{
+									"key": "company",
+									"value": "MicroSoft by Bill Gates"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
