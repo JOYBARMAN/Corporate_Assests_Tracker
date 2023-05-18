@@ -266,7 +266,7 @@ class DeviceAssignmentFilterByCompany(APIView):
             serializer = AssignmentDeviceSerializer(result_page, many=True)
             return paginator.get_paginated_response(serializer.data)
         else:
-            return Response({'error': 'Please provide section parameter in the URL'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Please provide company parameter in the URL'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
